@@ -1,0 +1,12 @@
+Imtihonga ajratilgan vaqt 12 soat
+Variantlar soni 1
+Django Blog veb saytining backend qisimini yozish. 
+Imtihon 40 balli tizimda baholanadi, Har bir xususiyat uchun quyida ko'rsatilgan tartibda baho qo'yiladi.  
+Topshiriqlar:
+1. Loyihaning templatelari hamda static fayllarini ulash - 8 
+2. Post yaratish -  6
+3. Postni tahrirlash hamda o'chirish - 6
+4. Shaxsiy postlarni ko'rish - 6 
+5. Login qilish - 8
+6. Register qilish - 8
+7. Loyihani gitga yuklash - 6
