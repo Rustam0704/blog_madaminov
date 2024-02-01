@@ -29,7 +29,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="{% url 'blog:post-form-page' %}">New Post</a>
                 <a class="nav-item nav-link" href="{% url 'blog:user-posts-page' %}">Profile</a>
-                <a class="nav-item nav-link" href="#">Logout</a>
+                <a class="nav-item nav-link" href="{%  url 'blog:logout-page' %}">Logout</a>
                 <a class="nav-item nav-link" href="{% url 'blog:login-page' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'blog:register-page' %}">Register</a>
             </div>
@@ -44,23 +44,16 @@
                 <h3>Django messages might be shown here</h3>
               </div>
                     <div class="content-section">
-                        <form >
+                            <form method="post" action="{% url 'blog:post-form-page' %}">
                             <fieldset class="form-group">
                                 <legend class="border-bottom mb-4">Blog Post</legend>
                                 <div class="form-group">
-                                    <label for="title">Title</label>
-                                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter the title">
+                                {{ form.as_div }} 
+                                {% csrf_token %}
                                 </div>
-                                
-                                <div class="form-group">
-                                    <label for="content">Content</label>
-                                    <textarea class="form-control" id="content" name="content" rows="4" placeholder="Enter the content"></textarea>
-                                </div>
+                                <button class="btn btn-outline-info" type="submit">Create Post</button>
                             </fieldset>
-                            <div class="form-group">
-                                <button class="btn btn-outline-info" type="submit">Post</button>
-                            </div>
-                        </form>
+                            </form>
                     </div>
                 </div>
                 <div class="col-md-4">

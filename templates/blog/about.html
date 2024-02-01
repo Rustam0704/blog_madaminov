@@ -25,7 +25,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="{% url 'blog:post-form-page' %}">New Post</a>
                 <a class="nav-item nav-link" href="{% url 'blog:user-posts-page' %}">Profile</a>
-                <a class="nav-item nav-link" href="#">Logout</a>
+                <a class="nav-item nav-link" href="{%  url 'blog:logout-page' %}">Logout</a>
                 <a class="nav-item nav-link" href="{% url 'blog:login-page' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'blog:register-page' %}">Register</a>
             </div>
@@ -38,18 +38,13 @@
         <div class="col-md-8">
                 <h1>About Page</h1>
                     <div class="container mt-5">
-                        <h2>About Us</h2>
-                        <p>Welcome to our Django Blog! This blog is dedicated to sharing knowledge, experiences, and thoughts on various topics.</p>
-
-                        <h3>Our Mission</h3>
-                        <p>Our mission is to provide valuable and insightful content to our readers. We aim to engage, educate, and entertain through our blog posts.</p>
-
-                        <h3>Meet the Team</h3>
-                        <p>We are a passionate team of writers, developers, and enthusiasts who love sharing our expertise with the world.</p>
-
-                        <!-- Add more content about your team, mission, etc. -->
-
+                        {% for about in abouts %}
+                            <h3>{{ about.title}}</h3>
+                            <p>{{ about.description }}</p>
+                        {% endfor %}
+<br><br>
                         <p>Feel free to explore our blog and discover a wide range of articles covering different subjects.</p>
+                        
                     </div>
 
                 </div>

@@ -30,7 +30,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="{% url 'blog:post-form-page' %}">New Post</a>
                 <a class="nav-item nav-link" href="{% url 'blog:user-posts-page' %}">Profile</a>
-                <a class="nav-item nav-link" href="#">Logout</a>
+                <a class="nav-item nav-link" href="{%  url 'blog:logout-page' %}">Logout</a>
                 <a class="nav-item nav-link" href="{% url 'blog:login-page' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'blog:register-page' %}">Register</a>
             </div>

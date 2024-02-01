@@ -30,7 +30,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="{% url 'blog:post-form-page' %}">New Post</a>
                 <a class="nav-item nav-link" href="{% url 'blog:user-posts-page' %}">Profile</a>
-                <a class="nav-item nav-link" href="{% url 'blog:login-page' %}">Logout</a>
+                <a class="nav-item nav-link" href="{%  url 'blog:logout-page' %}">Logout</a>
                 <a class="nav-item nav-link" href="{% url 'blog:login-page' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'blog:register-page' %}">Register</a>
             </div>
@@ -47,25 +47,25 @@
             <h1 class="mb-3">Posts by Andrew Ng </h1>
          
             <article class="media content-section">
-              <img class="rounded-circle article-img" src="{% media 'andrew.jpeg' %}">
+              <img class="rounded-circle article-img" src="{% static 'assets/andrew.jpeg' %}">
               <div class="media-body">
                 <div class="article-metadata">
                   <a class="mr-2" href="{% url 'blog:user-posts-page' %}">Andrew Ng</a>
                   <small class="text-muted">Aug 21, 2019</small>
                 </div>
-                <h4><a class="article-title" href="{% url 'blog:post-detail-page' %}">AI in Latin America: Announcing our first international office in Colombia</a></h2>
+                <h4><a class="article-title" href="{% url 'blog:post-detail-page' post.id %}">AI in Latin America: Announcing our first international office in Colombia</a></h2>
                 <p class="article-content">I am excited to announce the opening of our office in Medellín, Colombia. 
                   The office will serve as the Latin American headquarters for three of the companies in our AI ecosystem</p>
               </div>
             </article>
             <article class="media content-section">
-              <img class="rounded-circle article-img" src="andrew.jpeg">
+              <img class="rounded-circle article-img" src="{% static 'assets/andrew.jpeg' %}">
               <div class="media-body">
                 <div class="article-metadata">
                   <a class="mr-2" href="{% url 'blog:user-posts-page' %}">Andrew Ng</a>
                   <small class="text-muted">Aug 21, 2019</small>
                 </div>
-                <h4><a class="article-title" href="{% url 'blog:post-detail-page' %}">Introducing the AI Transformation Playbook</a></h2>
+                <h4><a class="article-title" href="{% url 'blog:post-detail-page' post.id %}">Introducing the AI Transformation Playbook</a></h2>
                 <p class="article-content">Dear friends,
                   I’m excited to share with you the AI Transformation Playbook. Drawn from my experience leading Google Brain, 
                   Baidu’s AI Group, and Landing AI, this Playbook provides a roadmap for your company to transform into a great AI company.</p>

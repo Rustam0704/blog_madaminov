@@ -30,7 +30,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="{% url 'blog:post-form-page' %}">New Post</a>
                 <a class="nav-item nav-link" href="{% url 'blog:user-posts-page' %}">Profile</a>
-                <a class="nav-item nav-link" href="#">Logout</a>
+                <a class="nav-item nav-link" href="{%  url 'blog:logout-page' %}">Logout</a>
                 <a class="nav-item nav-link" href="{% url 'blog:login-page' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'blog:register-page' %}">Register</a>
             </div>
@@ -51,18 +51,13 @@
         <a class="mr-2" href="{% url 'blog:user-posts-page' %}">RapidFork Technology</a>
         <small class="text-muted">Feb 19, 2023</small>
          <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="#">Update</a>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'blog:post-confirm-delete-page' %}">Update</a>
             <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'blog:post-confirm-delete-page' %}">Delete</a>
           </div>
         
       </div>
-      <h2 class="article-title">I have been watching a decade.</h2>
-      <p class="article-content">I have been watching a decade worth of The Ask Project
-        by Corey Gil-Shuster on YouTube. Makes me have very little hope of there ever 
-        being a two state solution. The Palestinians seem
-        Makes me have very little hope of there ever 
-        being a two state solution. The Palestinians seem
-      </p>
+      <h2 class="article-title">{{ post.title }}</h2>
+      <p class="article-content">{{ post.content }}</p>
     </div>
   </article>
 </div>
